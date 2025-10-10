@@ -1,9 +1,11 @@
-import Image from "next/image";
-
-export default function Home() {
-  return(
-    <div className=" text-foreground ">
-      Hello there
+export default function Page() {
+  return (
+    <div>
+      <div className = "h-screen">
+          <div className = " flex justify-center content-center ">
+            this is the intro section for me my homies
+          </div>
+      </div>
     </div>
   )
 }
