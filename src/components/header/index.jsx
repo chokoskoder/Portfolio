@@ -11,37 +11,17 @@ export default function Header() {
   const [isActive, setIsActive] = useState(false);
 
   return (
-<nav className="w-full bg-primary flex items-center p-[10px] font-extrabold">       {/* need to check for box-sizing*/}
-  {/* LEFT - Logo */}
-  <div className="flex-1 text-white text-xl">
-    <Link href="/">SIDDHANT</Link>
+<nav className="w-full bg-primary flex  p-[10px] font-extrabold">       {/* need to check for box-sizing*/}
+  <div className = "flex content-center uppercase text-[12px] font-extrabold relative">
+    <Link href='/'>SIDDHANT</Link>
+    <div onClick={()=>{setIsActive(!isActive)}} className='flex justify-center items-center gap-[8px] cursor-pointer'>
+      <div className=''> {/* Burger css will come here */}
+      <div>
+         
+      </div>
+      </div>
+    </div>
   </div>
-
-  {/* CENTER - Hamburger + Menu */}
-  <div className="flex-1 flex justify-center">
-    <button
-      onClick={() => setIsActive(!isActive)}
-      className="flex flex-col justify-between w-6 h-3.5 relative group cursor-pointer"
-    >
-      <span
-        className={`block h-[2px] bg-white transition-transform duration-500 ${
-          isActive ? 'rotate-45 translate-y-[6px]' : ''
-        }`}
-      ></span>
-      <span
-        className={`block h-[2px] bg-white transition-transform duration-500 ${
-          isActive ? '-rotate-45 -translate-y-[6px]' : ''
-        }`}
-      ></span>
-    </button>
-  </div>
-
-  {/* RIGHT - Icons */}
-        <Icons isActive = {isActive} ></Icons>
-
-        <AnimatePresence mode='wair'>
-          {isActive && <Nav/>}
-        </AnimatePresence>
 </nav>
 
   );
